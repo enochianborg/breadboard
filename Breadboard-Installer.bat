@@ -35,17 +35,19 @@
    echo Updating Breadboard
    git pull 
    call npm start
+   exit
  
 :Install
    echo This is the Install subroutine it will do the initial    installation
    CD %HOMEDRIVE%%HOMEPATH%
    git clone https://github.com/cocktailpeanut/breadboard.git
    echo Launching Breadboard Browser
+   CD %HOMEDRIVE%%HOMEPATH%
+   CD breadboard
+   call npm install
+   call npm start
+   exit
 
-CD %HOMEDRIVE%%HOMEPATH%
-CD breadboard
-call npm install
-call npm start
 
 REM EOF end of file.
    
